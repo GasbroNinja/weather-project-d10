@@ -39,7 +39,7 @@
 
 @keyframes lights {
   0% {
-    color: hsl(230, 40%, 80%);
+    color: hsl(0, 0%, 100%);
     text-shadow:
       0 0 1em hsla(320, 100%, 50%, 0.2),
       0 0 0.125em hsla(320, 100%, 60%, 0.3),
@@ -48,7 +48,7 @@
   }
 
   30% {
-    color: hsl(230, 80%, 90%);
+    color: hsl(231, 9%, 85%);
     text-shadow:
       0 0 1em hsla(320, 100%, 50%, 0.5),
       0 0 0.125em hsla(320, 100%, 60%, 0.5),
@@ -57,7 +57,7 @@
   }
 
   40% {
-    color: hsl(230, 100%, 95%);
+    color: hsl(0, 1%, 83%);
     text-shadow:
       0 0 1em hsla(320, 100%, 50%, 0.5),
       0 0 0.125em hsla(320, 100%, 90%, 0.5),
@@ -66,7 +66,7 @@
   }
 
   70% {
-    color: hsl(230, 80%, 90%);
+    color: hsl(0, 0%, 87%);
     text-shadow:
       0 0 1em hsla(320, 100%, 50%, 0.5),
       0 0 0.125em hsla(320, 100%, 60%, 0.5),
@@ -75,7 +75,7 @@
   }
 
   100% {
-    color: hsl(230, 40%, 80%);
+    color: hsl(0, 0%, 100%);
     text-shadow:
       0 0 1em hsla(320, 100%, 50%, 0.2),
       0 0 0.125em hsla(320, 100%, 60%, 0.3),
@@ -83,6 +83,13 @@
       -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
   }
 
+}
+
+.personalAnimation{
+    margin: auto;
+    font-size: 1.5rem;
+    font-weight: 300;
+    animation: lights 5s 150ms linear infinite;
 }
 
 h1 {
