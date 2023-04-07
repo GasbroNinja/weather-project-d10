@@ -1,0 +1,123 @@
+*{
+  box-sizing: border-box;
+}
+
+/*
+.rain {
+  background: '#005BEA',
+    icon: 'weather-rainy'
+}
+.clear {
+  background: '#f7b733',
+    icon: 'weather-sunny'
+}
+.thunderstorm {
+  background: '#616161',
+    icon: 'weather-lightning'
+}
+.clouds {
+  background: '#1F1C2C',
+    icon: 'weather-cloudy'
+}
+.snow {
+  background: '#00d2ff',
+    icon: 'weather-snowy'
+}
+.drizzle {
+  background: '#076585',
+    icon: 'weather-hail'
+}
+.haze {
+  background: '#66A6FF',
+    icon: 'weather-hail'
+}
+.mist {
+  background: '#3CD3AD',
+    icon: 'weather-fog'
+}
+*/
+
+@keyframes lights {
+  0% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+
+  30% {
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+
+  40% {
+    color: hsl(230, 100%, 95%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 90%, 0.5),
+      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+  }
+
+  70% {
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+
+  100% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+
+}
+
+h1 {
+  margin: auto;
+  font-size: 3.5rem;
+  font-weight: 300;
+  animation: lights 5s 750ms linear infinite;
+}
+
+h2 {
+    margin: auto;
+    font-size: 2.5rem;
+    font-weight: 300;
+    animation: lights 5s 750ms linear infinite;
+
+
+}
+
+
+h4 {
+  margin: auto;
+  font-size: 1.5rem;
+  font-weight: 300;
+  animation: lights 5s 750ms linear infinite;
+
+}
+
+#myBorder{
+
+  border: 5px solid darkcyan;
+  box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+#myBorder2 {
+
+  border: 1px solid darkcyan;
+  box-shadow: inset -1px 3px 8px 0px #1F87FF, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
