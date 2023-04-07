@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col, Form, Spinner, Alert } from "react-bootstrap";
-//import { Link, Route, Routes, useLocation } from "react-router-dom";
 import "../App.css"
+//import { Link, Route, Routes, useLocation } from "react-router-dom";
 //import NotFound from "./NotFound";
 
 
@@ -10,7 +10,7 @@ const BASE_URL = "https://api.openweathermap.org/data/2.5/weather?q="
 const KEY = '910b52d2d2707dbd34dfcca7f47984f9';
 const TIME_NOW = new Date().toLocaleString();
 const Search = () => {
-//    const location = useLocation();
+
 
     const [query, setQuery] = useState("");
     const [country, setCountry] = useState(""); 
@@ -50,10 +50,6 @@ const Search = () => {
         seconds = seconds % 60;
         minutes = minutes % 60;
 
-        // 👇️ If you don't want to roll hours over, e.g. 24 to 00
-        // 👇️ comment (or remove) the line below
-        // commenting next line gets you `24:00:00` instead of `00:00:00`
-        // or `36:15:31` instead of `12:15:31`, etc.
         hours = hours % 24;
 
         return `${padTo2Digits(hours)}:${padTo2Digits(minutes)}:${padTo2Digits(
@@ -130,11 +126,13 @@ const Search = () => {
                   break;
               }
 
-              console.log(bgGif)
-
             setIsLoading(false)
             } else {
-                console.log("Error to fetch")
+                <Alert variant="danger">
+                    {errorMsg
+                    ? errorMsg
+                    : "Error to fetch"}
+                </Alert>;
                 setIsLoading(false)
             }
 
@@ -152,15 +150,6 @@ const Search = () => {
         funcData();
 
     }
-
-
-
-
-
-
-
-
-
 
   return (
     <Container
@@ -202,7 +191,7 @@ const Search = () => {
             <div className="d-flex justify-content-center align-items-center">
               <Spinner
                 id="myBorder"
-                className="personalAnimation my-3 me-5"
+                className="my-3 ms-auto me-5"
                 animation="grow"
                 variant="info"
                 role="status"
