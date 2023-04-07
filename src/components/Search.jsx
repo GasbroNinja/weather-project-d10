@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Spinner, Alert } from "react-bootstrap";
 import "../App.css"
+import Logo from "./Logo";
 //import { Link, Route, Routes, useLocation } from "react-router-dom";
 //import NotFound from "./NotFound";
 
@@ -8,7 +9,8 @@ import "../App.css"
 const BASE_URL = "https://api.openweathermap.org/data/2.5/weather?q="
 
 const KEY = '910b52d2d2707dbd34dfcca7f47984f9';
-const TIME_NOW = new Date().toLocaleString();
+//const TIME_NOW = new Date().toLocaleTimeString();
+
 const Search = () => {
 
 
@@ -25,17 +27,22 @@ const Search = () => {
     const [wind, setWind] = useState("");
     const [sunrise, setSunrise] = useState("");
     const [sunset, setSunset] = useState("");
-
-
-
-
-
-
-
     const [bgGif, setBgGif] = useState("");
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
     const [errorMsg, setErrorMsg] = useState("");
+    
+    let time = new Date().toLocaleTimeString();
+    
+    let [currentTime, changeTime] = useState(time);
+
+      function checkTime() {
+        time = new Date().toLocaleTimeString();
+        changeTime(time);
+    }
+    setInterval(checkTime, 1000);
+
+
 
     function padTo2Digits(num) {
       return num.toString().padStart(2, "0");
@@ -91,6 +98,7 @@ const Search = () => {
               switch (BGGif) {
                 case "Snow":
                   setBgGif(
+                    //Québec
                     "url('https://mdbgo.io/ascensus/mdb-advanced/img/snow.gif')"
                   );
                   break;
@@ -105,6 +113,7 @@ const Search = () => {
                   );
                   break;
                 case "Rain":
+                    //Madang
                   setBgGif(
                     "url('https://mdbgo.io/ascensus/mdb-advanced/img/rain.gif')"
                   );
@@ -161,17 +170,23 @@ const Search = () => {
           "linear-gradient(180deg, rgba(4,83,83,1) 0%, rgba(69,69,69,1) 100%)",
       }}
     >
+      <Logo />
       <Container>
         <Row>
           <Col xs={10} className="mx-auto">
             <Form id="myBorder" className="rounded-4" onSubmit={handleSubmit}>
               <Form.Control
                 id="myBorder2"
-                className="rounded-4"
+                className="rounded-4 personalAnimation text-center fs-2"
                 type="search"
                 value={query}
                 onChange={handleChange}
                 placeholder="Insert your city type and press Enter"
+                style={{
+                  height: "90px",
+                  background:
+                    "linear-gradient(203deg, #071b1b 25%, #002727 90%)",
+                }}
               />
             </Form>
           </Col>
@@ -213,7 +228,7 @@ const Search = () => {
               <Row className="d-none d-sm-flex">
                 <h1 className="my-2 d-flex justify-content-center">{city}</h1>
                 <h1 className="my-2 d-flex justify-content-center">
-                  {TIME_NOW}
+                  {currentTime}
                 </h1>
                 <Col className="" /*sm={6} md={4} lg={1}*/>
                   <h2 className="my-2 d-flex">Country:</h2>
